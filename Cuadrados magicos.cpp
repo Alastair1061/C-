@@ -14,7 +14,7 @@ void mostrar_cuadrado(int cuadrado[19][19], int n)
 		cout<<"-";
 	cout<<"+"<<endl;
 		
-	for(i=n-1;i>=0;i--)
+	for(i=n-1;i>=0;i)
 	{
 		cout<<"|";//pinta lineas de numeros
 		for(j=0;j<n;j++)
