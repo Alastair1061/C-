@@ -67,20 +67,20 @@ int main(int argc, char *argv[]) {
 			for(filas=0;filas<8;filas+=2)//Estos 2 for son para pintar las casillas, simulando un tablero de ajedrez
 			{
 				for(columnas=0;columnas<8;columnas+=2)
-					reina[m][filas][columnas]=176;
+					reina[m][filas][columnas]=' ';
 				for(columnas=1;columnas<8;columnas+=2)
-					reina[m][filas][columnas]=219;	
+					reina[m][filas][columnas]=' ';	
 			}
 			for(filas=1;filas<8;filas+=2)
 			{
 				for(columnas=1;columnas<8;columnas+=2)
-					reina[m][filas][columnas]=176;
+					reina[m][filas][columnas]=' ';
 				for(columnas=0;columnas<8;columnas+=2)
-					reina[m][filas][columnas]=219;	
+					reina[m][filas][columnas]=' ';	
 			}
 
 			for(k=0;k<8;k++)//Este es para pintar el simbolo de la reina en las casillas soluciones
-				reina[m][k][columna[k]]=140;
+				reina[m][k][columna[k]]='i';
 			m++;//y nos pasamos a la siguiente solucion
 			
 			/*
@@ -105,7 +105,7 @@ int main(int argc, char *argv[]) {
 	{
 		do
 		{
-			printf("\n¿Cual quieres conocer? ");
+			printf("\nCual quieres conocer? ");
 			scanf("%d",&i);
 			fflush(stdin);
 		}while (i<1 || i>m);
@@ -113,12 +113,13 @@ int main(int argc, char *argv[]) {
 		printf("\nEsa solucion es:");
 		for(filas=0;filas<8;filas++) //Este for muestra el tablero en pantalla
 		{
-			printf("\n\t\t\t\t");
+			printf("\n+----------------+\n|");
 			for(columnas=0;columnas<8;columnas++)
-				printf("%c",reina[i-1][filas][columnas]);
+				printf("%c|",reina[i-1][filas][columnas]);
 		}
+		printf("\n+----------------+");
 		
-		printf("\n\n¿Quieres conocer otra? (0=no) ");
+		printf("\n\nQuieres conocer otra? (0=no) ");
 		scanf("%d",&j);
 		fflush(stdin);
 	}while(j!=0);
